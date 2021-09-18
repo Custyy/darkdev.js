@@ -1,23 +1,33 @@
-# DarkDev.js ne işe yarıyor? | Darkdev.js what does it do?
+# darkdev.js ne işe yarıyor? | darkdev.js what does it do?
 
-🇹🇷 DarkDev.js yardımcı olma amaçlı *basit* bir modüldür.
-🇺🇸 DarkDev.js is a *simple* module to help.
+🇹🇷 darkdev.js yardımcı olma amaçlı *basit* bir modüldür.
+🇺🇸 darkdev.js is a *simple* module to help.
 
 # Kurulum
 
-`npm i DarkDev.js`
+`npm i darkdev.js`
 
 # Sonra... | Then...
 
-# NumberToEmoji
+# Test Start
+```js
+const DarkDev = require('darkdev.js')
+DarkDev(client)
+
+DarkDev('your-magic-token') // Çıktısı | Output;
+
+// Dark Partner#0816 başarıyla başlatıldı ve kapatılıyor. | Dark Partner#0816 succesfully started and now shuting down. 
 ```
-const { NumberToEmoji } = require('DarkDev.js')
+
+# NumberToEmoji
+```js
+const { NumberToEmoji } = require('darkdev.js')
 
 NumberToEmoji(message.guild.memberCount) // Varsayılan | Default: 3️⃣1️⃣
 
 // "Eğer isterseniz | If you want"
 
-const { NumberToEmoji } = require('DarkDev.js')
+const { NumberToEmoji } = require('darkdev.js')
 
 NumberToEmoji(message.guild.memberCount,
 '<a:zero:675593025468235806>',
@@ -33,8 +43,61 @@ NumberToEmoji(message.guild.memberCount,
 '<a:blank:675593025468235806>') // Girilen emoji şeklinde
 ```
 
+# DarkERR
+```js
+const { DarkERR } = require('darkdev.js')
+
+client.login('token').catch(DarkERR) // Çıktısı | Output;
+
+// ══════════════════════════════════════════════════════════════════════════════
+// │
+// │ Uh, olamaz. Bir hata ile karşılaştık. | Uh, it can't be. We encountered an error.
+// │
+// │ Hata saati | Error time: 31 Temmuz 2021 Cumartesi 13:37
+// │
+// │ Hata kodu | Error code: x[10000 - 12500]
+// │
+// │ Hata: Error [TOKEN_INVALID]: An invalid token was provided.
+// │
+// └────────────────────────────────────
+
+// "Eğer isterseniz | If you want"
+
+const { DarkERR } = require('darkdev.js')
+
+client.login('token').catch(error => DarkERR(error,`Bir hata var. | There is a problem.
+
+{error}`)) // Çıktısı;
+
+// Bir hata var. | There is a problem.
+//
+// Error [TOKEN_INVALID]: An invalid token was provided.
+```
+
+# DarkMS
+```js
+const { DarkMS } = require('darkdev.js')
+
+console.log(DarkMS(<your-date>)) // Çıktısı | Output;
+
+// {
+//		gün: 1,
+//		saat: 23,
+//		dakika: 59,
+//		saniye: 59,
+//		milisaniye: 59,
+//		mikrosaniye: 59,
+//		nanosaniye: 59
+//	}
+
+})
+
+```
 ## İçindekiler
 
-DarkDev.js 1 seçenek destekliyor. | DarkDev.js supporting 1 option. Bunlar;
+darkdev.js 4 seçenek destekliyor. | darkdev.js supporting 4 option. Bunlar;
 
+* *_DarkDev_* - Botunuzu test olarak çalıştırın. | Start your bot for test.
 * *_NumberToEmoji_* - Sayıları emojiye çevirir. | Convert numbers to emoji.
+* *_DarkERR_* - Hata mesajınızı özelleştirin. | Customize your error message.
+* *_DarkMS_* - "parse-ms" modülünün türkçe basit hali. | "parse-ms" module simple version.
