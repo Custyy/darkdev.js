@@ -16,7 +16,7 @@ DarkDev(client)
 
 DarkDev('your-magic-token') // Çıktısı | Output;
 
-// Dark Partner#0816 başarıyla başlatıldı ve kapatılıyor. | Dark Partner#0816 succesfully started and now shuting down. 
+/* Dark Partner#0816 başarıyla başlatıldı ve kapatılıyor. | Dark Partner#0816 succesfully started and now shuting down. */
 ```
 
 # NumberToEmoji
@@ -49,17 +49,17 @@ const { DarkERR } = require('darkdev.js')
 
 client.login('token').catch(DarkERR) // Çıktısı | Output;
 
-// ══════════════════════════════════════════════════════════════════════════════
-// │
-// │ Uh, olamaz. Bir hata ile karşılaştık. | Uh, it can't be. We encountered an error.
-// │
-// │ Hata saati | Error time: 31 Temmuz 2021 Cumartesi 13:37
-// │
-// │ Hata kodu | Error code: x[10000 - 12500]
-// │
-// │ Hata: Error [TOKEN_INVALID]: An invalid token was provided.
-// │
-// └────────────────────────────────────
+/*│────────────────────────────────────
+  │
+  │ Uh, olamaz. Bir hata ile karşılaştık. | Uh, it can't be. We encountered an error.
+  │
+  │ Hata saati | Error time: 31 Temmuz 2021 Cumartesi 13:37
+  │
+  │ Hata kodu | Error code: x[10000 - 12500]
+  │
+  │ Hata: Error [TOKEN_INVALID]: An invalid token was provided.
+  │
+  └────────────────────────────────────/*
 
 // "Eğer isterseniz | If you want"
 
@@ -69,9 +69,9 @@ client.login('token').catch(error => DarkERR(error,`Bir hata var. | There is a p
 
 {error}`)) // Çıktısı;
 
-// Bir hata var. | There is a problem.
-//
-// Error [TOKEN_INVALID]: An invalid token was provided.
+/* Bir hata var. | There is a problem.
+
+Error [TOKEN_INVALID]: An invalid token was provided. */
 ```
 
 # DarkMS
@@ -80,24 +80,46 @@ const { DarkMS } = require('darkdev.js')
 
 console.log(DarkMS(<your-date>)) // Çıktısı | Output;
 
-// {
-//		gün: 1,
-//		saat: 23,
-//		dakika: 59,
-//		saniye: 59,
-//		milisaniye: 59,
-//		mikrosaniye: 59,
-//		nanosaniye: 59
-//	}
+/* {
+	gün: 1,
+	saat: 23,
+	dakika: 59,
+	saniye: 59,
+	milisaniye: 59,
+	mikrosaniye: 59,
+	nanosaniye: 59
+} */
 
 })
+```
 
+# generatePassword
+```js
+const { generatePassword } = require('darkdev.js')
+// const DarkPassword = generatePassword(<options>)
+const DarkPassword = generatePassword({
+  kaçHane: 7,
+  küçükBüyük: true,
+  sayıKullanım: true
+})
+console.log(DarkPassword) // Çıktısı | Output;
+
+/* D4RKD3V */
+```
+
+# getRandomFloat
+```js
+const { getRandomFloat } = require('darkdev.js')
+
+console.log(getRandomFloat(1,5)) // 3
 ```
 ## İçindekiler
 
-darkdev.js 4 seçenek destekliyor. | darkdev.js supporting 4 option. Bunlar;
+darkdev.js 6 seçenek destekliyor. | darkdev.js supporting 6 option. Bunlar;
 
 * *_DarkDev_* - Botunuzu test olarak çalıştırın. | Start your bot for test.
 * *_NumberToEmoji_* - Sayıları emojiye çevirir. | Convert numbers to emoji.
 * *_DarkERR_* - Hata mesajınızı özelleştirin. | Customize your error message.
 * *_DarkMS_* - "parse-ms" modülünün türkçe basit hali. | "parse-ms" module simple version.
+* *_generatePassword_* - İstediğiniz ayarlar ile şifre oluşturun. | Create a password with the settings you want.
+* *_getRandomFloat_* - Girilen iki sayı arasında rastgele bir sayı verir. | Returns a random number between two entered numbers.
