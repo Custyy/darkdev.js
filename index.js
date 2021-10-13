@@ -1,4 +1,3 @@
-const DBLAPI = require('dblapi.js')
 const Discord = require('discord.js')
 const client = new Discord.Client()
 const moment = require('moment')
@@ -40,9 +39,9 @@ return console.error(custom ? custom.toString().replace(/{Error}/g,Error) : `═
 }
 
 function DarkMS(milliseconds) {
-	if (typeof milliseconds !== 'number') {
-		throw new TypeError('Geçersiz sayı | Expected a number | Check us: https://discord.gg/Xh2J9UakSm')
-	}
+   if (typeof milliseconds !== 'number') {
+   throw new TypeError('Geçersiz sayı | Expected a number | Check us: https://discord.gg/Xh2J9UakSm')
+}
 
 	return {
 		gün: Math.trunc(milliseconds / 86400000),
@@ -62,7 +61,29 @@ console.log('npmjs.com/package/darkdev.js')
 setTimeout(() => { process.exit(0) },2500)
 }).catch(err => DarkERR(err))
 }
-module.exports.NumberToEmoji = NumberToEmoji
+
+function getRandomFloat(min, max) {
+return Math.random() * ((max ? max : 0) - (min ? min : 0)) + min ? min : 0;
+}
+	  
+function generatePassword(options) {
+if (options.küçükBüyük !== true || options.küçükBüyük !== false) throw new TypeError('Geçersiz tanım [küçükBüyük] | Invalid arguman [küçükBüyük] | Check us: https://discord.gg/Xh2J9UakSm')
+if (options.sayıKullanım !== true || options.sayıKullanım !== false) throw new TypeError('Geçersiz tanım [sayıKullanım] | Invalid arguman [sayıKullanım] | Check us: https://discord.gg/Xh2J9UakSm')
+
+if (options.küçükBüyük == true && options.sayıKullanım == true) harfChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+if (options.küçükBüyük == true && options.sayıKullanım == false) harfChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+if (options.küçükBüyük == false && options.sayıKullanım == true) harfChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+if (options.küçükBüyük == false && options.sayıKullanım == false) harfChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+DarkDevJS = "";
+for (var i = 0, Custy = harfChars.length; i < options.kaçHane; ++i) {
+DarkDevJS += harfChars.charAt(Math.floor(Math.random() * Custy))
+}
+return DarkDevJS;
+}
+
+module.exports.generatePassword = generatePassword
+module.exports.getRandomFloat = getRandomFloat
+module.exports.numberToEmoji = NumberToEmoji
 module.exports.DarkERR = DarkERR
 module.exports.DarkMS = DarkMS
 module.exports = TestStart
