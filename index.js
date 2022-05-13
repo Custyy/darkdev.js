@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 const moment = require('moment')
 require('moment-duration-format')
-
+// Disabled this module
 function NumberToEmoji(number,zero,one,two,three,four,five,six,seven,eight,nine,blank) {
 const Emotes = {
   ' ': blank ? blank : '   ',
