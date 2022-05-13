@@ -1,5 +1,5 @@
 # darkdev.js ne işe yarıyor? | darkdev.js what does it do?
-
+# Disabled
 🇹🇷 darkdev.js yardımcı olma amaçlı *basit* bir modüldür.
 🇺🇸 darkdev.js is a *simple* module to help.
 
